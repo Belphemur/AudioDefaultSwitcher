@@ -30,25 +30,7 @@
     <ClInclude Include="ExportDll.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="PolicyConfig.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="AudioDevice.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="resource.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="AudioDeviceType.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="MMNotificationClient.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="AudioEndPointLibraryImpl.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Signal.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -60,12 +42,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="dllmain.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="AudioDevice.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MMNotificationClient.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
