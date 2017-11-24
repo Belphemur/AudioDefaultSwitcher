@@ -1,4 +1,6 @@
 #include "ComDefinitions.h"
+#include "DeviceRole.h"
+
 // This class is exported from the AudioEndPointLibrary.dll
 namespace AudioEndPoint {
 
@@ -6,7 +8,7 @@ namespace AudioEndPoint {
     class AUDIODEFAULTSWITCHER_API CSwitcher {
     public:    
 		static CSwitcher& GetInstance();
-	    bool SwitchTo(PCWSTR deviceId, const ERole role) const;
+	    bool SwitchTo(PCWSTR deviceId, const DeviceRole role) const;
     
 
     private:

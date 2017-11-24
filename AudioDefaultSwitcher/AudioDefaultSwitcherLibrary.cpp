@@ -13,9 +13,18 @@ namespace AudioEndPoint {
         return instance;
     }
 
-	bool CSwitcher::SwitchTo(PCWSTR deviceId, const ERole role) const
+	bool CSwitcher::SwitchTo(PCWSTR deviceId, const DeviceRole role) const
 	{
-		return SUCCEEDED(pPolicyConfig->SetDefaultEndpoint(deviceId, role));
+		if(role == DeviceRole::rAll)
+		{
+			auto result = true;
+			result &= SUCCEEDED(pPolicyConfig->SetDefaultEndpoint(deviceId, eCommunications));
+			result &= SUCCEEDED(pPolicyConfig->SetDefaultEndpoint(deviceId, eConsole));
+			result &= SUCCEEDED(pPolicyConfig->SetDefaultEndpoint(deviceId, eMultimedia));
+			return result;
+		}
+
+		return SUCCEEDED(pPolicyConfig->SetDefaultEndpoint(deviceId, static_cast<ERole>(role)));
 	}
 
 	CSwitcher::CSwitcher()
