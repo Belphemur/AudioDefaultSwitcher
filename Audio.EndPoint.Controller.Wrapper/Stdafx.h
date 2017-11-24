@@ -26,10 +26,6 @@
 #include <comutil.h>
 
 #include "ExportDll.h"
-
-#include "IAudioDevice.h"
-#include "SharedNativePtr.h"
-#include "AudioDevice.h"
-#include "AudioEndPointLibraryImpl.h"
 #include <list>
+#include "AudioDefaultSwitcherLibrary.h"
 
