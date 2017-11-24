@@ -1,7 +1,7 @@
 #pragma once
 
 #include "DeviceRole.h"
-#include "COM_Builder.h"
+#include "DeviceType.h"
 
 // This class is exported from the AudioEndPointLibrary.dll
 namespace audio_default {
@@ -11,7 +11,7 @@ namespace audio_default {
     public:    
 		static CSwitcher& get_instance();
 	    bool switch_to(__in PCWSTR deviceId, __in const DeviceRole role) const;
-		bool is_default(__in PCWSTR deviceId, __in const EDataFlow type, const DeviceRole role) const;
+		bool is_default(__in PCWSTR deviceId, __in const DeviceType type, const DeviceRole role) const;
     
 
     private:

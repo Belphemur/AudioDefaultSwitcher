@@ -30,7 +30,7 @@ namespace audio_default {
 		return SUCCEEDED(policy_config->SetDefaultEndpoint(deviceId, static_cast<ERole>(role)));
 	}
 
-	bool CSwitcher::is_default(const PCWSTR deviceId, const EDataFlow type, const DeviceRole role) const
+	bool CSwitcher::is_default(const PCWSTR deviceId, const DeviceType type, const DeviceRole role) const
 	{
 		if (role == DeviceRole::rAll)
 		{
@@ -43,7 +43,7 @@ namespace audio_default {
 		}
 
 		CDevicePtr pDevice;
-		COM_Builder::get_enumerator()->GetDefaultAudioEndpoint(type, static_cast<ERole>(role), &pDevice);
+		COM_Builder::get_enumerator()->GetDefaultAudioEndpoint(static_cast<EDataFlow>(type), static_cast<ERole>(role), &pDevice);
 
 		LPWSTR defaultId;
 
