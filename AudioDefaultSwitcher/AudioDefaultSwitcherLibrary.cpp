@@ -3,6 +3,7 @@
 
 #include "stdafx.h"
 #include "AudioDefaultSwitcherLibrary.h"
+#include "Container.h"
 
 namespace audio_default {
 
@@ -18,13 +19,13 @@ namespace audio_default {
 		if(role == DeviceRole::rAll)
 		{
 			auto result = true;
-			result &= SUCCEEDED(pPolicyConfig->SetDefaultEndpoint(deviceId, eCommunications));
-			result &= SUCCEEDED(pPolicyConfig->SetDefaultEndpoint(deviceId, eConsole));
-			result &= SUCCEEDED(pPolicyConfig->SetDefaultEndpoint(deviceId, eMultimedia));
+			result &= SUCCEEDED(pContainer.pPolicyConfig->SetDefaultEndpoint(deviceId, eCommunications));
+			result &= SUCCEEDED(pContainer.pPolicyConfig->SetDefaultEndpoint(deviceId, eConsole));
+			result &= SUCCEEDED(pContainer.pPolicyConfig->SetDefaultEndpoint(deviceId, eMultimedia));
 			return result;
 		}
 
-		return SUCCEEDED(pPolicyConfig->SetDefaultEndpoint(deviceId, static_cast<ERole>(role)));
+		return SUCCEEDED(pContainer.pPolicyConfig->SetDefaultEndpoint(deviceId, static_cast<ERole>(role)));
 	}
 
 	CSwitcher::CSwitcher()
@@ -32,7 +33,7 @@ namespace audio_default {
 		HRESULT Result = CoInitializeEx(nullptr, COINIT_APARTMENTTHREADED);
 
 
-		Result = pPolicyConfig.CreateInstance(__uuidof(CPolicyConfigVistaClient));
+		Result = pContainer.pPolicyConfig.CreateInstance(__uuidof(CPolicyConfigVistaClient));
 		if(FAILED(Result))
 		{
 			throw std::invalid_argument("Can't instanciate the Policy client");
@@ -42,9 +43,9 @@ namespace audio_default {
 
 	CSwitcher::~CSwitcher()
 	{
-		if(pPolicyConfig != nullptr)
+		if(pContainer.pPolicyConfig != nullptr)
 		{
-			pPolicyConfig->Release();
+			pContainer.pPolicyConfig->Release();
 		}
 	}
 }

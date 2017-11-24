@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26403.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AudioDefaultSwitcherLib", "AudioDefaultSwitcher\AudioDefaultSwitcherLibrary.vcxproj", "{521ED36D-A11A-4033-BF96-3C066FE74032}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AudioDefaultSwitcher", "AudioDefaultSwitcher\AudioDefaultSwitcherLibrary.vcxproj", "{866E7A49-8977-4CE2-A2A0-A484DBCF2138}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Audio.EndPoint.Controller.Wrapper", "Audio.EndPoint.Controller.Wrapper\Audio.EndPoint.Controller.Wrapper.vcxproj", "{115BF2B4-B3BE-446D-BA76-348E274258F7}"
 	ProjectSection(ProjectDependencies) = postProject
-		{521ED36D-A11A-4033-BF96-3C066FE74032} = {521ED36D-A11A-4033-BF96-3C066FE74032}
+		{866E7A49-8977-4CE2-A2A0-A484DBCF2138} = {866E7A49-8977-4CE2-A2A0-A484DBCF2138}
 	EndProjectSection
 EndProject
 Global
@@ -18,14 +18,14 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{521ED36D-A11A-4033-BF96-3C066FE74032}.Debug|x64.ActiveCfg = Debug|x64
-		{521ED36D-A11A-4033-BF96-3C066FE74032}.Debug|x64.Build.0 = Debug|x64
-		{521ED36D-A11A-4033-BF96-3C066FE74032}.Debug|x86.ActiveCfg = Debug|Win32
-		{521ED36D-A11A-4033-BF96-3C066FE74032}.Debug|x86.Build.0 = Debug|Win32
-		{521ED36D-A11A-4033-BF96-3C066FE74032}.Release|x64.ActiveCfg = Release|x64
-		{521ED36D-A11A-4033-BF96-3C066FE74032}.Release|x64.Build.0 = Release|x64
-		{521ED36D-A11A-4033-BF96-3C066FE74032}.Release|x86.ActiveCfg = Release|Win32
-		{521ED36D-A11A-4033-BF96-3C066FE74032}.Release|x86.Build.0 = Release|Win32
+		{866E7A49-8977-4CE2-A2A0-A484DBCF2138}.Debug|x64.ActiveCfg = Debug|x64
+		{866E7A49-8977-4CE2-A2A0-A484DBCF2138}.Debug|x64.Build.0 = Debug|x64
+		{866E7A49-8977-4CE2-A2A0-A484DBCF2138}.Debug|x86.ActiveCfg = Debug|Win32
+		{866E7A49-8977-4CE2-A2A0-A484DBCF2138}.Debug|x86.Build.0 = Debug|Win32
+		{866E7A49-8977-4CE2-A2A0-A484DBCF2138}.Release|x64.ActiveCfg = Release|x64
+		{866E7A49-8977-4CE2-A2A0-A484DBCF2138}.Release|x64.Build.0 = Release|x64
+		{866E7A49-8977-4CE2-A2A0-A484DBCF2138}.Release|x86.ActiveCfg = Release|Win32
+		{866E7A49-8977-4CE2-A2A0-A484DBCF2138}.Release|x86.Build.0 = Release|Win32
 		{115BF2B4-B3BE-446D-BA76-348E274258F7}.Debug|x64.ActiveCfg = Debug|x64
 		{115BF2B4-B3BE-446D-BA76-348E274258F7}.Debug|x64.Build.0 = Debug|x64
 		{115BF2B4-B3BE-446D-BA76-348E274258F7}.Debug|x86.ActiveCfg = Debug|Win32

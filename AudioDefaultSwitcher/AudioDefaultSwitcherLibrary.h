@@ -1,5 +1,6 @@
-#include "ComDefinitions.h"
+
 #include "DeviceRole.h"
+#include "Container.h"
 
 // This class is exported from the AudioEndPointLibrary.dll
 namespace audio_default {
@@ -17,7 +18,7 @@ namespace audio_default {
         CSwitcher(CSwitcher const&) = delete;
 		void operator=(CSwitcher const&) = delete;
 
-		CPolicyConfigPtr pPolicyConfig;
+		Container pContainer;
     };
 
 

@@ -27,7 +27,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{521ED36D-A11A-4033-BF96-3C066FE74032}</ProjectGuid>
+    <ProjectGuid>{866E7A49-8977-4CE2-A2A0-A484DBCF2138}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>AudioDefaultSwitcherLibrary</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
@@ -243,6 +243,7 @@
   <ItemGroup>
     <ClInclude Include="AudioDefaultSwitcherLibrary.h" />
     <ClInclude Include="ComDefinitions.h" />
+    <ClInclude Include="Container.h" />
     <ClInclude Include="DeviceRole.h" />
     <ClInclude Include="ExportDll.h" />
     <ClInclude Include="PolicyConfig.h" />
