@@ -243,7 +243,7 @@
   <ItemGroup>
     <ClInclude Include="AudioDefaultSwitcherLibrary.h" />
     <ClInclude Include="ComDefinitions.h" />
-    <ClInclude Include="Container.h" />
+    <ClInclude Include="COM_Builder.h" />
     <ClInclude Include="DeviceRole.h" />
     <ClInclude Include="ExportDll.h" />
     <ClInclude Include="PolicyConfig.h" />

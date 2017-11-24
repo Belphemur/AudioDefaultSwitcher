@@ -3,7 +3,7 @@
 
 #include "stdafx.h"
 #include "AudioDefaultSwitcherLibrary.h"
-#include "Container.h"
+#include "COM_Builder.h"
 
 namespace audio_default {
 
@@ -16,36 +16,49 @@ namespace audio_default {
 
 	bool CSwitcher::switch_to(__in PCWSTR deviceId, __in const DeviceRole role) const
 	{
+		auto policy_config = COM_Builder::get_policy_config();
+
 		if(role == DeviceRole::rAll)
 		{
 			auto result = true;
-			result &= SUCCEEDED(pContainer.pPolicyConfig->SetDefaultEndpoint(deviceId, eCommunications));
-			result &= SUCCEEDED(pContainer.pPolicyConfig->SetDefaultEndpoint(deviceId, eConsole));
-			result &= SUCCEEDED(pContainer.pPolicyConfig->SetDefaultEndpoint(deviceId, eMultimedia));
+			result &= SUCCEEDED(policy_config->SetDefaultEndpoint(deviceId, eCommunications));
+			result &= SUCCEEDED(policy_config->SetDefaultEndpoint(deviceId, eConsole));
+			result &= SUCCEEDED(policy_config->SetDefaultEndpoint(deviceId, eMultimedia));
 			return result;
 		}
 
-		return SUCCEEDED(pContainer.pPolicyConfig->SetDefaultEndpoint(deviceId, static_cast<ERole>(role)));
+		return SUCCEEDED(policy_config->SetDefaultEndpoint(deviceId, static_cast<ERole>(role)));
+	}
+
+	bool CSwitcher::is_default(const PCWSTR deviceId, const EDataFlow type, const DeviceRole role) const
+	{
+		if (role == DeviceRole::rAll)
+		{
+			auto result = true;
+			result &= this->is_default(deviceId, type, rCommunications);
+			result &= this->is_default(deviceId, type, rConsole);
+			result &= this->is_default(deviceId, type, rMultimedia);
+
+			return result;
+		}
+
+		CDevicePtr pDevice;
+		COM_Builder::get_enumerator()->GetDefaultAudioEndpoint(type, static_cast<ERole>(role), &pDevice);
+
+		LPWSTR defaultId;
+
+		pDevice->GetId(&defaultId);
+
+		return wcscmp(defaultId, deviceId) == 0;
 	}
 
 	CSwitcher::CSwitcher()
 	{
-		HRESULT Result = CoInitializeEx(nullptr, COINIT_APARTMENTTHREADED);
-
-
-		Result = pContainer.pPolicyConfig.CreateInstance(__uuidof(CPolicyConfigVistaClient));
-		if(FAILED(Result))
-		{
-			throw std::invalid_argument("Can't instanciate the Policy client");
-		}
-
+	
 	}
 
 	CSwitcher::~CSwitcher()
 	{
-		if(pContainer.pPolicyConfig != nullptr)
-		{
-			pContainer.pPolicyConfig->Release();
-		}
+	
 	}
 }
