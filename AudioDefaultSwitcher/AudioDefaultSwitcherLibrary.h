@@ -1,3 +1,4 @@
+#pragma once
 
 #include "DeviceRole.h"
 #include "Container.h"
