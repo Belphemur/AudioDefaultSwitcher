@@ -10,7 +10,7 @@ namespace audio_default {
     class AUDIODEFAULTSWITCHER_API CSwitcher {
     public:    
 		static CSwitcher& get_instance();
-	    bool switch_to(PCWSTR deviceId, const DeviceRole role) const;
+	    bool switch_to(__in PCWSTR deviceId, __in const DeviceRole role) const;
     
 
     private:

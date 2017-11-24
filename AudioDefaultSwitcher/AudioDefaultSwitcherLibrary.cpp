@@ -14,7 +14,7 @@ namespace audio_default {
         return instance;
     }
 
-	bool CSwitcher::switch_to(PCWSTR deviceId, const DeviceRole role) const
+	bool CSwitcher::switch_to(__in PCWSTR deviceId, __in const DeviceRole role) const
 	{
 		if(role == DeviceRole::rAll)
 		{
