@@ -4,16 +4,16 @@
 #include "stdafx.h"
 #include "AudioDefaultSwitcherLibrary.h"
 
-namespace AudioEndPoint {
+namespace audio_default {
 
    
-    CSwitcher& CSwitcher::GetInstance()
+    CSwitcher& CSwitcher::get_instance()
     {
         static CSwitcher instance;
         return instance;
     }
 
-	bool CSwitcher::SwitchTo(PCWSTR deviceId, const DeviceRole role) const
+	bool CSwitcher::switch_to(PCWSTR deviceId, const DeviceRole role) const
 	{
 		if(role == DeviceRole::rAll)
 		{

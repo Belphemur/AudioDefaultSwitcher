@@ -1,5 +1,5 @@
 ﻿#pragma once
-namespace AudioEndPoint {
+namespace audio_default {
 	enum DeviceRole
 	{
 		rConsole = 0,
