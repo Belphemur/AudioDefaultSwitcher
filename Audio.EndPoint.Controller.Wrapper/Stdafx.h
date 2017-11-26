@@ -27,5 +27,6 @@
 
 #include "ExportDll.h"
 #include <list>
+#include <vcclr.h>
 #include "AudioDefaultSwitcherLibrary.h"
 
