@@ -1,9 +1,9 @@
 // Audio.EndPoint.Controller.Wrapper.h
 
 #pragma once
+#include "DeviceDefinitions.h"
 
 using namespace System;
-using namespace audio_default;
 
 namespace AudioDefaultSwitcherWrapper {
 

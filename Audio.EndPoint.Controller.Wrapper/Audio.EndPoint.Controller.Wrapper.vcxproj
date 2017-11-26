@@ -222,6 +222,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Audio.Default.Switcher.Wrapper.h" />
+    <ClInclude Include="DeviceDefinitions.h" />
     <ClInclude Include="resource1.h" />
     <ClInclude Include="Stdafx.h" />
   </ItemGroup>

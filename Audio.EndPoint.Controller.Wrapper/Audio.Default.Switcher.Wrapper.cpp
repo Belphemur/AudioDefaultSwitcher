@@ -4,7 +4,6 @@
 #include "Audio.Default.Switcher.Wrapper.h"
 
 using namespace System;
-using namespace audio_default;
 using namespace System::Runtime::InteropServices;
 
 namespace AudioDefaultSwitcherWrapper {
@@ -12,7 +11,7 @@ namespace AudioDefaultSwitcherWrapper {
 	{
 		IntPtr ip = Marshal::StringToHGlobalAnsi(deviceId);
 		const wchar_t* str = static_cast<const wchar_t*>(ip.ToPointer());
-		return CSwitcher::get_instance().switch_to(str, role);
+		return audio_default::CSwitcher::get_instance().switch_to(str, static_cast<audio_default::DeviceRole>(role));
 	}
 
 	bool AudioController::IsDefault(String ^ deviceId, DeviceType type, DeviceRole role)
@@ -20,6 +19,6 @@ namespace AudioDefaultSwitcherWrapper {
 		IntPtr ip = Marshal::StringToHGlobalAnsi(deviceId);
 		const wchar_t* str = static_cast<const wchar_t*>(ip.ToPointer());
 
-		return CSwitcher::get_instance().is_default(str, type, role);
+		return audio_default::CSwitcher::get_instance().is_default(str, static_cast<audio_default::DeviceType>(type), static_cast<audio_default::DeviceRole>(role));
 	}
 }
